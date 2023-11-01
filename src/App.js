@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Encuestas from './components/Encuestas';
+
+
 
 function App() {
+
+  const [encuestas] = useState ( [
+    { id: 1, pregunta: '¿Cual es tu color favorito?', opciones:
+  ['Rojo ' ,'Azul ' ,'Verde'] },
+    { id: 2, pregunta: '¿Cual es tu comida favorita?', opciones:
+  ['Pizza ' ,'Hamburguesa ' ,'Sushi'] },
+   ]);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Aplicacion de Encuestas</h1>
+      
+      <Encuestas encuestas={encuestas} />
     </div>
   );
 }
